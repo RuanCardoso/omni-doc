@@ -15,12 +15,12 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/icon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
     
     
       
-        <title>Installation - Omni</title>
+        <title>Installation - Omni Documentation</title>
       
     
     
@@ -92,10 +92,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Omni" class="md-header__button md-logo" aria-label="Omni" data-md-component="logo">
+    <a href="../.." title="Omni Documentation" class="md-header__button md-logo" aria-label="Omni Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -106,7 +105,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Omni
+            Omni Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -227,13 +226,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Omni" class="md-nav__button md-logo" aria-label="Omni" data-md-component="logo">
+    <a href="../.." title="Omni Documentation" class="md-nav__button md-logo" aria-label="Omni Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/icon.png" alt="logo">
 
     </a>
-    Omni
+    Omni Documentation
   </label>
   
     <div class="md-nav__source">
@@ -368,6 +366,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setup-omni" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Omni
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-server-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web-Server Configuration
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -426,8 +442,8 @@
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Install necessary dependencies before starting your project.</p>
-<div class="highlight"><pre><span></span><code>com.unity.nuget.newtonsoft-json
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>com.unity.nuget.newtonsoft-json
+</span></code></pre></div>
 <p>How to install newtonsoft-json?</p>
 <ol>
 <li>Open the Unity Editor.</li>
@@ -448,7 +464,294 @@ By default, Omni uses binary serialization, but it can use JSON serialization as
 <p>Install Omni:</p>
 <ol>
 <li>Go to the GitHub repository <a href="https://github.com/RuanCardoso/OmniNet/releases">Releases</a> and download the latest version.</li>
+<li>Go to <code>Assets &gt; Import Package &gt; Custom Package</code> and select the downloaded version and press <code>Import</code>.</li>
+<li>Wait for the installation to complete and scripts recompilation.</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After installation, note that the following macros will be automatically defined in your project:</p>
+<ul>
+<li><code>OMNI_DEBUG</code> Automatically activated for debugging purposes. This macro is enabled by default.</li>
+<li><code>OMNI_RELEASE</code> Should be used for production builds. This activates all possible optimizations.</li>
+<li><code>OMNI_SERVER</code> Automatically activated when building the project for server deployment (Dedicated Server mode).</li>
+</ul>
+<p>Omni most used namespaces:</p>
+<ul>
+<li><code>using Omni.Core;</code> Used to all networking related classes, including database classes.</li>
+<li><code>using Omni.Core.Hashing;</code> Provides hashing utilities.</li>
+<li><code>using Omni.Core.Web;</code> Provides web functionality, like as, Express.js, Web Server, HTTP Request, etc.</li>
+<li><code>using Omni.Core.IMatchmaking;</code> Provides matchmaking functionality, like as, Rooms, Groups, etc.</li>
+<li><code>using Omni.Execution;</code> Provides database query execution.</li>
+</ul>
+</div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Omni is installed.</li>
+</ul>
+<p>Wow!, now you can start your project <img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /></p>
+<h2 id="setup-omni">Setup Omni<a class="headerlink" href="#setup-omni" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to <code>Omni</code> in the Unity Menu, next to the <code>Window</code> menu and press <code>Setup</code></li>
+<li>Go to the <code>Hierarchy</code> tab, select and expand the <code>Omni Networking</code> game obect.</li>
+</ol>
+<p>Let's take a look at what each of these scripts and configurations are now. <img alt="😄" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f604.png" title=":smile:" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can skip this step if you want, as Omni comes pre-configured. Play with the default settings and see what happens.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Production Mode</code></td>
+<td>Enables or disables production mode. Production mode should be enabled when you are ready to deploy your game, ensuring a stable and optimized environment for end-users.</td>
+</tr>
+<tr>
+<td><code>Guid</code></td>
+<td>A unique identifier for the current game version. If the server's GUID differs from the client's GUID, the connection will fail, ensuring consistency and integrity between client and server versions. <code>Omni Network Script &gt; Context Menu &gt; Generate GUID</code></td>
+</tr>
+<tr>
+<td><code>Physics Mode</code></td>
+<td>Defines the physics mode to be used. Use 2D mode for two-dimensional games and 3D mode for three-dimensional games, ensuring accurate simulation of physical behavior according to your game's needs. This option is only used to simulate physics in scenes automatically created by Omni.</td>
+</tr>
+<tr>
+<td><code>Loop Mode</code></td>
+<td>Specifies the loop mode to be utilized. Choose between Tick-Based or Realtime, determining the execution model for game updates. Tick-Based provides a consistent time interval, while Realtime operates according to the framerate.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Tick-Based update method:
+<div class="language-c# highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// you must inherit from `NetworkBehaviour` or `RealtimeTickBasedSystem`. inherit from `NetworkBehaviour` is recommended.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// these methods are not called in realtime mode.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TickExample</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUpdateTick</span><span class="p">(</span><span class="n">ITickData</span><span class="w"> </span><span class="n">tick</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="c1">// is called every tick</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUpdateTickStart</span><span class="p">(</span><span class="n">ITickData</span><span class="w"> </span><span class="n">tick</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="c1">// is called on the first tick</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUpdateTickEnd</span><span class="p">(</span><span class="n">ITickData</span><span class="w"> </span><span class="n">tick</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="c1">// is called on the last tick</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Realtime update method:
+<div class="language-c# highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// you must inherit from `NetworkBehaviour` or `RealtimeTickBasedSystem`. inherit from `NetworkBehaviour` is recommended.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TickExample</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NetworkBehaviour</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="c1">// this method is not called in tick-based mode.</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUpdate</span><span class="p">()</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="c1">// is called every frame</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="c1">// the same as Update() which is called by Unity.</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="c1">// or independent, called by Unity.</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Update</span><span class="p">()</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="c1">// is called every frame</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Connect Async</code></td>
+<td>Initiates an asynchronous connection to the server. This method allows for non-blocking connection establishment, ideal for scenarios where responsiveness is crucial.</td>
+</tr>
+<tr>
+<td><code>Transport Option</code></td>
+<td>Specifies the transport protocol utilized for communication with the server. Options include TCP, UDP or Web Sockets. <code>UDP(Lite) is the default.</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>TCP Layer Availability:</strong> TCP transport supports the Reliable and reliable encrypted layers. If other layers are specified, they will be ignored, and the default Reliable layer will be utilized.</p>
+<p><strong>WebSocket Layer Availability:</strong> Web-Socket transport supports the Reliable and reliable encrypted layers. Specifying other layers will be disregarded, and the default Reliable layer will be employed. Encryption can be enabled by installing an SSL certificate.</p>
+<p><strong>UDP Layer Availability:</strong> UDP transport offers support for Reliable, Unreliable, and reliable encrypted layers. All layers are accessible for UDP transport. Encryption is provided through default AES and RSA encryption implementations.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IOPS</code></td>
+<td>Increases the socket's receive rate to match higher transmission rates. A higher value should be set to ensure the read rate keeps pace with the transmission, preventing bottlenecks and ensuring smooth data flow.</td>
+</tr>
+<tr>
+<td><code>FPS Update Rate</code></td>
+<td>Specifies the frames per second (FPS) update rate provided by the network monitor. This value indicates the frequency of FPS updates.</td>
+</tr>
+<tr>
+<td><code>OnTransportSettings</code></td>
+<td>Called before Omni starts, allowing for configuration adjustments. Use this to modify Omni settings before initialization, ideally used for setting platform-specific configurations.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Example of <code>OnTransportSettings</code>:
+<div class="language-c# highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// inherit from `CustomTransportSettings`</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomSettings</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CustomTransportSettings</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnTransportSettings</span><span class="p">(</span><span class="n">TransportSettings</span><span class="w"> </span><span class="n">transportSettings</span><span class="p">,</span><span class="w"> </span><span class="n">RuntimePlatform</span><span class="w"> </span><span class="n">runtimePlatform</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">runtimePlatform</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RuntimePlatform</span><span class="p">.</span><span class="n">Android</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">            </span><span class="n">transportSettings</span><span class="p">.</span><span class="n">Host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;89.0.142.86&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// example</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Attach this script to your game object, then drag the game object into the <code>OnTransportSettings</code> field.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some options below are transporter-specific, which means certain options are exclusive to transporter X and are not available for transporter Y, but if set they will be ignored.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Use Native Sockets</code></td>
+<td>Enables or disables the use of native socket libraries. This property is exclusively available on Windows and Linux platforms.</td>
+</tr>
+<tr>
+<td><code>Enable IPV6</code></td>
+<td>Enables the usage of IPV6 protocol for network communication.</td>
+</tr>
+<tr>
+<td><code>Use Safe MTU</code></td>
+<td>Automatically determines the optimal Maximum Transmission Unit (MTU) to reduce packet loss and ensure reliable network communication. This feature adjusts the MTU size to mitigate the risk of packet fragmentation and loss during data transmission.</td>
+</tr>
+<tr>
+<td><code>Disconnect Timeout</code></td>
+<td>Sets the duration in milliseconds after which the client is automatically disconnected if no packets are received.</td>
+</tr>
+<tr>
+<td><code>Packet Pool Size</code></td>
+<td>Determines the number of packets available in the packet pool for network communication.</td>
+</tr>
+<tr>
+<td><code>Ping Interval</code></td>
+<td>Specifies the time interval, in milliseconds, between ping requests to the server for checking the connection status. Longer intervals may reduce network overhead, while shorter intervals offer more frequent connection monitoring.</td>
+</tr>
+<tr>
+<td><code>No Delay</code></td>
+<td>Activates the TCP No Delay option, reducing latency by disabling Nagle's algorithm. This option can be beneficial for applications requiring immediate data transmission without delay.</td>
+</tr>
+<tr>
+<td><code>Linger State</code></td>
+<td>Specifies the linger state of the socket. The linger state determines whether the socket will continue to linger after closing, allowing pending data transmissions to complete.</td>
+</tr>
+<tr>
+<td><code>Send Buffer Size</code></td>
+<td>Specifies the size of the send buffer, optimizing the capacity for outgoing data transmissions.</td>
+</tr>
+<tr>
+<td><code>Receive Buffer Size</code></td>
+<td>Determines the size of the receive buffer, optimizing the capacity for incoming data transmissions.</td>
+</tr>
+<tr>
+<td><code>Send Timeout</code></td>
+<td>Sets the duration for the send operation to complete. If the send operation exceeds this duration, it will be aborted.</td>
+</tr>
+<tr>
+<td><code>Receive Timeout</code></td>
+<td>Specifies the duration for the receive operation to complete. If the receive operation exceeds this duration, it will be aborted, indicating a timeout error.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The options below are available for all transporters but may be ignored if set unnecessarily.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Host</code></td>
+<td>Specifies the hostname or IP address of the server. This value is used to establish the connection to the server.</td>
+</tr>
+<tr>
+<td><code>Server Port</code></td>
+<td>Defines the port number used by the server. This value is essential for establishing the connection to the server.</td>
+</tr>
+<tr>
+<td><code>Max FPS</code></td>
+<td>Sets the maximum frames per second (FPS) for the client. This option does not affect server builds.</td>
+</tr>
+<tr>
+<td><code>Max Message Size</code></td>
+<td>Specifies the maximum size of messages that the server can receive. This limit ensures efficient handling of data and prevents overload.</td>
+</tr>
+<tr>
+<td><code>Max Connections</code></td>
+<td>Determines the maximum number of connections that the server can accept concurrently. This limit helps manage server resources effectively.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="web-server-configuration">Web-Server Configuration<a class="headerlink" href="#web-server-configuration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Enable Web Server</code></td>
+<td>Activates the usage of the web server, facilitating web-based interactions with the application.</td>
+</tr>
+<tr>
+<td><code>Web Server Port</code></td>
+<td>Specifies the port number for the web server, defining the communication channel for web-based interactions.</td>
+</tr>
+<tr>
+<td><code>Use Https</code></td>
+<td>Enables Secure Sockets Layer (SSL) encryption for secure communication over HTTPS, enhancing data security and integrity.</td>
+</tr>
+<tr>
+<td><code>Process PHP</code></td>
+<td>Enables the processing of PHP files by the web server, allowing for dynamic content generation and enhanced functionality within web applications.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -496,7 +799,7 @@ By default, Omni uses binary serialization, but it can use JSON serialization as
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "toc.integrate", "navigation.path", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.select", "content.code.copy", "navigation.top", "toc.integrate", "navigation.path", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
