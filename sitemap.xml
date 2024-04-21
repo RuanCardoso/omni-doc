@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://127.0.0.1:8000/</loc>
-         <lastmod>2024-04-20</lastmod>
+         <lastmod>2024-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://127.0.0.1:8000/Communication/rpc/</loc>
+         <lastmod>2024-04-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://127.0.0.1:8000/Communication/serialization/</loc>
+         <lastmod>2024-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1:8000/Getting%20Started/components/</loc>
-         <lastmod>2024-04-20</lastmod>
+         <lastmod>2024-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://127.0.0.1:8000/Getting%20Started/installation/</loc>
-         <lastmod>2024-04-20</lastmod>
+         <lastmod>2024-04-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

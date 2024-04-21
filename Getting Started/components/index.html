@@ -14,6 +14,8 @@
         <link rel="prev" href="../installation/">
       
       
+        <link rel="next" href="../../Communication/serialization/">
+      
       
       <link rel="icon" href="../../assets/icon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
@@ -387,10 +389,141 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#network-prefab-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Prefab Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Monitor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-matchmaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Matchmaking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Security Group
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Communication
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Communication
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Communication/serialization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serialization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Communication/rpc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPC
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -435,6 +568,53 @@
 <p class="admonition-title">Warning</p>
 <p>If you are using the Unity Editor, ensure that the necessary ports are open for the Editor in your system firewall. If you are running a client or server built executable, ensure that the ports are open for the respective client or server executable in your system firewall. Otherwise, the connection will be rejected.</p>
 </div>
+<p><code>Omni default ports:</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Web Socket(Tcp)</th>
+<th>Tcp &amp; Udp(Lite)</th>
+<th>Web Server(Http/Tcp)</th>
+<th>Ntp Server(Udp)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Port</code></td>
+<td>7777 - 7778</td>
+<td>7777 - 7778</td>
+<td>8080 - 8443</td>
+<td>1023-1025</td>
+</tr>
+<tr>
+<td><code>Host</code></td>
+<td>localhost</td>
+<td>localhost</td>
+<td>localhost</td>
+<td>localhost</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="❤️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/2764.png" title=":heart:" /> ready!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have tried all possible solutions, ensured correct configuration, and port forwarding still does not work, it is likely that your ISP is blocking the ports, your router does not support port forwarding, or there are firewall issues. In such cases, consider attempting NAT Hole Punching as an alternative solution.</p>
+</div>
+<h2 id="network-prefab-manager">Network Prefab Manager<a class="headerlink" href="#network-prefab-manager" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to the <code>Hierarchy</code> tab, select and expand the <code>Omni Networking</code> game obect and select the <code>Network Prefab Manager</code> component.</li>
+</ol>
+<p>In this component, you must register all objects that will be instantiated on the network, such as players. All networked objects must have the <code>NetworkIdentity</code> component to be considered network objects.
+You can register the prefab via script using <code>PrefabManager.RegisterPrefab</code> or <code>OmniNetwork.PrefabManager.RegisterPrefab</code></p>
+<p><img alt="😎" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f60e.png" title=":sunglasses:" /></p>
+<h2 id="network-monitor">Network Monitor<a class="headerlink" href="#network-monitor" title="Permanent link">&para;</a></h2>
+<p>TODO: Add Network Monitor DOC.</p>
+<h2 id="network-matchmaking">Network Matchmaking<a class="headerlink" href="#network-matchmaking" title="Permanent link">&para;</a></h2>
+<p>This component handles matchmaking, rooms, groups, interest management, and more.
+It is accessed via, eg: <code>Matchmaking.JoinChannel</code> or <code>OmniNetwork.Matchmaking.JoinChannel</code>"</p>
+<h2 id="network-time">Network Time<a class="headerlink" href="#network-time" title="Permanent link">&para;</a></h2>
+<h2 id="network-security-group">Network Security Group<a class="headerlink" href="#network-security-group" title="Permanent link">&para;</a></h2>
 
 
 
